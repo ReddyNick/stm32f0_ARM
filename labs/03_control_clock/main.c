@@ -81,11 +81,11 @@ __attribute__((naked)) static void delay(void)
     asm ("cmp r6, #0");
     asm ("bne delay+0x4");
     asm ("pop {r7, pc}");
-#if defined(FLASH_0LAT_DELAY0LAT) || defined(FLASH_1LAT_DELAY0LAT)
-    asm (".word 0x927c00"); //9600000
-#else
+///#if defined(FLASH_0LAT_DELAY0LAT) || defined(FLASH_1LAT_DELAY0LAT)
+    asm (".word 0x927c00"); //9600000 //0x927c00
+//#else
     asm (".word 0x5b8d80"); //6000000
-#endif
+//#endif
 }
 
 /*
